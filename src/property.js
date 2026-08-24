@@ -566,10 +566,25 @@ function renderProperty(property) {
 // ---------- Gallery interaction ----------
 
 function initGallery(property) {
+  const gallery = document.querySelector('.gallery');
   const thumbs = document.querySelectorAll('.gallery-thumb');
   const mainImg = document.getElementById('gallery-active-img');
   const label = document.getElementById('gallery-label');
   const counter = document.getElementById('gallery-counter');
+
+  // Subtle IntersectionObserver fade-in when gallery enters viewport
+  if (gallery && 'IntersectionObserver' in window) {
+    gallery.classList.add('gallery-fade-init');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          gallery.classList.add('gallery-fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(gallery);
+  }
 
   thumbs.forEach((thumb) => {
     thumb.addEventListener('click', () => {

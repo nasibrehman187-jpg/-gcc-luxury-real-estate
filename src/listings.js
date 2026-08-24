@@ -22,6 +22,7 @@ const FALLBACK_PROPERTIES = [
     sqft: 6200,
     type: 'penthouse',
     typeLabel: 'Waterfront Penthouse',
+    purpose: 'primary',
     badge: 'Featured',
     status: 'Ready',
     added: '2024-11-15',
@@ -40,6 +41,7 @@ const FALLBACK_PROPERTIES = [
     sqft: 12400,
     type: 'villa',
     typeLabel: 'Beachfront Villa',
+    purpose: 'investment',
     badge: 'Investment',
     status: 'Ready',
     added: '2024-10-20',
@@ -58,6 +60,7 @@ const FALLBACK_PROPERTIES = [
     sqft: 4100,
     type: 'apartment',
     typeLabel: 'Skyline Apartment',
+    purpose: 'investment',
     badge: 'New',
     status: 'Off-Plan',
     added: '2024-12-01',
@@ -76,6 +79,7 @@ const FALLBACK_PROPERTIES = [
     sqft: 9800,
     type: 'waterfront-villa',
     typeLabel: 'Waterfront Estate',
+    purpose: 'primary',
     badge: 'Exclusive',
     status: 'Ready',
     added: '2024-12-10',
@@ -165,11 +169,15 @@ function getFiltered() {
   const filterLocation = document.getElementById('filter-location');
   const filterType = document.getElementById('filter-type');
   const filterPrice = document.getElementById('filter-price');
+  const filterBeds = document.getElementById('filter-beds');
+  const filterPurpose = document.getElementById('filter-purpose');
   const filterSort = document.getElementById('filter-sort');
 
   const loc = filterLocation?.value || 'all';
   const type = filterType?.value || 'all';
   const price = filterPrice?.value || 'all';
+  const beds = filterBeds?.value || 'all';
+  const purpose = filterPurpose?.value || 'all';
   const sort = filterSort?.value || 'newest';
 
   let results = [...getDataset()];
@@ -194,6 +202,23 @@ function getFiltered() {
     });
   } else if (price === '70m-plus') {
     results = results.filter(p => (p.priceAED || (p.priceUSD ? p.priceUSD * 3.67 : (p.price || 0) * 3.67)) > 70_000_000);
+  }
+
+  // Filter: Bedrooms (3+, 4+, 5+)
+  if (beds && beds !== 'all') {
+    const minBeds = parseInt(beds, 10);
+    if (!isNaN(minBeds)) {
+      results = results.filter(p => (p.beds || 0) >= minBeds);
+    }
+  }
+
+  // Filter: Purpose (Investment, Primary Residence)
+  if (purpose && purpose !== 'all') {
+    if (purpose === 'investment') {
+      results = results.filter(p => p.purpose === 'investment' || p.badge?.toLowerCase() === 'investment' || p.badge?.toLowerCase() === 'new');
+    } else if (purpose === 'primary') {
+      results = results.filter(p => p.purpose === 'primary' || p.badge?.toLowerCase() === 'featured' || p.badge?.toLowerCase() === 'exclusive');
+    }
   }
 
   // Sort
@@ -241,11 +266,15 @@ function resetAllFilters() {
   const filterLocation = document.getElementById('filter-location');
   const filterType = document.getElementById('filter-type');
   const filterPrice = document.getElementById('filter-price');
+  const filterBeds = document.getElementById('filter-beds');
+  const filterPurpose = document.getElementById('filter-purpose');
   const filterSort = document.getElementById('filter-sort');
 
   if (filterLocation) filterLocation.value = 'all';
   if (filterType) filterType.value = 'all';
   if (filterPrice) filterPrice.value = 'all';
+  if (filterBeds) filterBeds.value = 'all';
+  if (filterPurpose) filterPurpose.value = 'all';
   if (filterSort) filterSort.value = 'newest';
 
   render();
@@ -257,22 +286,32 @@ function applyUrlParams() {
   const params = new URLSearchParams(window.location.search);
   const typeParam = params.get('type')?.toLowerCase();
   const locParam = params.get('location')?.toLowerCase();
+  const bedsParam = params.get('beds')?.toLowerCase();
+  const purposeParam = params.get('purpose')?.toLowerCase();
 
   const filterType = document.getElementById('filter-type');
   const filterLocation = document.getElementById('filter-location');
+  const filterBeds = document.getElementById('filter-beds');
+  const filterPurpose = document.getElementById('filter-purpose');
 
   if (typeParam && filterType) {
     const isValid = Array.from(filterType.options).some(opt => opt.value === typeParam);
-    if (isValid) {
-      filterType.value = typeParam;
-    }
+    if (isValid) filterType.value = typeParam;
   }
 
   if (locParam && filterLocation) {
     const isValid = Array.from(filterLocation.options).some(opt => opt.value === locParam);
-    if (isValid) {
-      filterLocation.value = locParam;
-    }
+    if (isValid) filterLocation.value = locParam;
+  }
+
+  if (bedsParam && filterBeds) {
+    const isValid = Array.from(filterBeds.options).some(opt => opt.value === bedsParam);
+    if (isValid) filterBeds.value = bedsParam;
+  }
+
+  if (purposeParam && filterPurpose) {
+    const isValid = Array.from(filterPurpose.options).some(opt => opt.value === purposeParam);
+    if (isValid) filterPurpose.value = purposeParam;
   }
 }
 
@@ -284,11 +323,13 @@ function initListingsPage() {
   const filterLocation = document.getElementById('filter-location');
   const filterType = document.getElementById('filter-type');
   const filterPrice = document.getElementById('filter-price');
+  const filterBeds = document.getElementById('filter-beds');
+  const filterPurpose = document.getElementById('filter-purpose');
   const filterSort = document.getElementById('filter-sort');
   const resetBtn = document.getElementById('filter-reset');
   const emptyResetBtn = document.getElementById('empty-reset');
 
-  [filterLocation, filterType, filterPrice, filterSort].forEach(el => {
+  [filterLocation, filterType, filterPrice, filterBeds, filterPurpose, filterSort].forEach(el => {
     el?.addEventListener('change', render);
   });
 

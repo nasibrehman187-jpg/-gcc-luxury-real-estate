@@ -135,6 +135,25 @@
   margin: 1.5rem auto 0;
   padding: 0 3rem;
 }
+.gallery.gallery-fade-init {
+  opacity: 0;
+  transition: opacity 0.6s ease-out;
+}
+.gallery.gallery-fade-init.gallery-fade-in {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery.gallery-fade-init {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+}
+.reduced-motion .gallery.gallery-fade-init {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
 .gallery-main {
   width: 100%;
   height: 520px;

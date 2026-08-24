@@ -83,7 +83,7 @@
   flex-direction: column;
   gap: 0.35rem;
   flex: 1;
-  min-width: 160px;
+  min-width: 140px;
 }
 
 .filter-group label {

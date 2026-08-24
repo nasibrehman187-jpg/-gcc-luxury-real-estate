@@ -762,47 +762,42 @@ body:has(.trust-bar) #navbar {
   border: 1px solid rgba(196, 164, 132, 0.28);
   border-radius: 4px;
   overflow: hidden;
-  transform-style: preserve-3d;
   transition:
-    transform 420ms cubic-bezier(.2, .8, .2, 1),
-    box-shadow 420ms ease,
-    border-color 420ms ease;
+    transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 320ms ease,
+    border-color 320ms ease;
   opacity: 0;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 12px 36px rgba(10, 8, 7, 0.55);
+  box-shadow: 0 8px 24px rgba(10, 8, 7, 0.45);
 }
 .property-card.visible {
   opacity: 1;
 }
 .property-card:hover {
   border-color: rgba(224, 176, 76, 0.55);
-  transform: perspective(1000px) rotateX(2deg) rotateY(-3deg) translateY(-8px);
-  box-shadow: 0 18px 50px rgba(224, 176, 76, 0.18);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(10, 8, 7, 0.65), 0 0 20px rgba(224, 176, 76, 0.12);
 }
 
 .property-card__content {
   display: flex;
   flex-direction: column;
   height: 100%;
-  transform: translateZ(18px);
-  transform-style: preserve-3d;
-  transition: transform 420ms cubic-bezier(.2, .8, .2, 1);
 }
 
 @media (hover: none) {
   .property-card:hover {
     transform: none;
-    box-shadow: 0 12px 36px rgba(10, 8, 7, 0.55);
-  }
-  .property-card__content {
-    transform: none;
+    box-shadow: 0 8px 24px rgba(10, 8, 7, 0.45);
   }
 }
 
 .reduced-motion .property-card,
 .reduced-motion .property-card__content,
-.reduced-motion .property-card:hover {
+.reduced-motion .property-card:hover,
+.reduced-motion button:hover,
+.reduced-motion a:hover {
   transition: none !important;
   transform: none !important;
 }
@@ -1850,6 +1845,62 @@ footer {
     flex-direction: column;
     gap: 0.8rem;
     text-align: center;
+  }
+}
+
+/* ---------- Subtle Button Motion ---------- */
+.nav-cta,
+.mobile-nav-cta,
+.view-property-btn,
+.filter-reset,
+.agent-btn,
+.consult-submit,
+.btn-hero-primary,
+.btn-hero-secondary,
+.not-found-btn-primary,
+.not-found-btn-secondary,
+.form-reset-btn {
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.nav-cta:hover,
+.mobile-nav-cta:hover,
+.view-property-btn:hover,
+.filter-reset:hover,
+.agent-btn:hover,
+.consult-submit:hover,
+.btn-hero-primary:hover,
+.btn-hero-secondary:hover,
+.not-found-btn-primary:hover,
+.not-found-btn-secondary:hover,
+.form-reset-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (hover: none) {
+  .nav-cta:hover,
+  .mobile-nav-cta:hover,
+  .view-property-btn:hover,
+  .filter-reset:hover,
+  .agent-btn:hover,
+  .consult-submit:hover,
+  .btn-hero-primary:hover,
+  .btn-hero-secondary:hover,
+  .not-found-btn-primary:hover,
+  .not-found-btn-secondary:hover,
+  .form-reset-btn:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
   }
 }
 
