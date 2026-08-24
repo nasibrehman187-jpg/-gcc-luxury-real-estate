@@ -20,7 +20,7 @@ export const TRANSLATIONS = {
     // Trust Bar
     'trust.license': 'RERA & DLD Licensed Brokerage · ORN 29481',
     'trust.years': '15+ Years Excellence',
-    'trust.yield': 'Rental Yield: 6.8% – 9.2% p.a.',
+    'trust.yield': 'Indicative Yield: 6.8% – 9.2% p.a.',
 
     // Hero Section
     'hero.eyebrow': 'Est. 2009 — Dubai · Abu Dhabi · Doha',
@@ -123,7 +123,7 @@ export const TRANSLATIONS = {
     // Trust Bar
     'trust.license': 'وساطة عقارية مرخصة من RERA و DLD · رخصة 29481',
     'trust.years': 'أكثر من 15 عاماً من التميز',
-    'trust.yield': 'عوائد إيجارية: 6.8% – 9.2% سنوياً',
+    'trust.yield': 'عوائد تأشيرية: 6.8% – 9.2% سنوياً',
 
     // Hero Section
     'hero.eyebrow': 'تأسست عام 2009 — دبي · أبوظبي · الدوحة',

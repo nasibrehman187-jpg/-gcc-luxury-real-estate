@@ -665,6 +665,87 @@ body:has(.trust-bar) #navbar {
   font-size: 1.2rem;
 }
 
+.trust-bar-disclaimer {
+  max-width: 1200px;
+  margin: 0.65rem auto 0;
+  text-align: center;
+  font-size: 0.68rem;
+  color: var(--sandstone);
+  opacity: 0.75;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Featured Residences Preview Section ---------- */
+.section-featured-residences {
+  padding: 6rem 2rem;
+  background: var(--bg-primary);
+  border-bottom: 1px solid rgba(196, 164, 132, 0.12);
+}
+
+.featured-residences-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.featured-grid .property-card {
+  opacity: 1; /* Instantly visible in static layout */
+}
+
+.featured-actions {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.btn-view-all-residences {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 2.4rem;
+  background: rgba(36, 31, 28, 0.75);
+  border: 1px solid rgba(196, 164, 132, 0.35);
+  border-radius: 2px;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-view-all-residences:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(224, 176, 76, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(224, 176, 76, 0.18);
+}
+
+@media (max-width: 1024px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .section-featured-residences {
+    padding: 4.5rem 1.25rem;
+  }
+}
+
 /* ---------- Why Invest With Us Section ---------- */
 .section-why-invest {
   padding: 6.5rem 2rem;
