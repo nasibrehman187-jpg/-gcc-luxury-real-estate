@@ -1,9 +1,9 @@
-﻿// ============================================================
+// ============================================================
 //  GCC Luxury Real Estate — GA4 Event Tracking Module
-//  Measurement ID: G-8HVHNGC4DN
+//  Measurement ID: G-5JF2QXJN4Z
 // ============================================================
 
-export const GA_MEASUREMENT_ID = 'G-8HVHNGC4DN';
+export const GA_MEASUREMENT_ID = 'G-5JF2QXJN4Z';
 
 /**
  * Send custom GA4 event safely
