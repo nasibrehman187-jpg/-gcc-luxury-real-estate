@@ -448,6 +448,9 @@ function renderProperty(property) {
               <span class="form-error-text" id="form-error-text"></span>
             </div>
 
+            <!-- Anti-Bot Honeypot -->
+            <input type="text" name="b_address" id="cf-b_address" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
             <!-- Field 1: Full Name -->
             <div class="form-group">
               <label for="cf-name">Full Name <span class="required-star">*</span></label>
@@ -624,8 +627,29 @@ function initContactForm(property) {
   phoneInput?.addEventListener('input', () => clearFieldError(phoneInput, phoneError));
   emailInput?.addEventListener('input', () => clearFieldError(emailInput, emailError));
 
+  let lastSubmissionTime = 0;
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Anti-Spam Honeypot Check: silently reject bot submissions
+    const honeypotVal = form.querySelector('input[name="b_address"]')?.value || '';
+    if (honeypotVal) {
+      console.warn('Spam submission filtered via honeypot.');
+      form.style.display = 'none';
+      if (successBox) successBox.style.display = 'block';
+      return;
+    }
+
+    // Rate Limiting: prevent rapid repetitive submissions
+    const now = Date.now();
+    if (now - lastSubmissionTime < 3000) {
+      if (formError) {
+        if (formErrorText) formErrorText.textContent = 'Please wait a moment before submitting again.';
+        formError.style.display = 'flex';
+      }
+      return;
+    }
 
     // Reset previous errors
     if (formError) {

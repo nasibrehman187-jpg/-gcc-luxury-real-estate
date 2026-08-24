@@ -1852,3 +1852,17 @@ footer {
     text-align: center;
   }
 }
+
+/* ---------- Anti-Bot Honeypot Protection ---------- */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+

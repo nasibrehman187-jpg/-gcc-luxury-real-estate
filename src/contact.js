@@ -17,8 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form) return;
 
+  let lastSubmissionTime = 0;
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Anti-Spam Honeypot Check: silently reject bot submissions
+    const honeypotVal = form.querySelector('input[name="b_company_url"]')?.value || '';
+    if (honeypotVal) {
+      console.warn('Spam submission filtered via honeypot.');
+      form.style.display = 'none';
+      if (successCard) successCard.style.display = 'block';
+      return;
+    }
+
+    // Rate Limiting: prevent rapid repetitive submissions
+    const now = Date.now();
+    if (now - lastSubmissionTime < 3000) {
+      showError('Please wait a moment before submitting again.');
+      return;
+    }
 
     // Reset error
     if (errorAlert) {
