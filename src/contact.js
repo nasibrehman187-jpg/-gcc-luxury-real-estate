@@ -17,13 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form) return;
 
+  const formInitTime = Date.now();
   let lastSubmissionTime = 0;
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Anti-Spam Honeypot Check: silently reject bot submissions
-    const honeypotVal = form.querySelector('input[name="b_company_url"]')?.value || '';
+    const honeypotVal = form.querySelector('input[name="_hp_company_sec"]')?.value || '';
     if (honeypotVal) {
       console.warn('Spam submission filtered via honeypot.');
       form.style.display = 'none';
@@ -31,12 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    // Time-based bot detection: bots submit instantaneously (< 800ms)
+    if (Date.now() - formInitTime < 800) {
+      console.warn('Spam submission filtered via interaction speed check.');
+      form.style.display = 'none';
+      if (successCard) successCard.style.display = 'block';
+      return;
+    }
+
     // Rate Limiting: prevent rapid repetitive submissions
     const now = Date.now();
-    if (now - lastSubmissionTime < 3000) {
+    if (lastSubmissionTime > 0 && now - lastSubmissionTime < 3000) {
       showError('Please wait a moment before submitting again.');
       return;
     }
+    lastSubmissionTime = now;
 
     // Reset error
     if (errorAlert) {

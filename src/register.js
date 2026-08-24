@@ -18,14 +18,14 @@ export function initPrivateRegister() {
     const submitBtn = form.querySelector('button[type="submit"]');
 
     // Ensure honeypot field exists for spam bot detection
-    let honeypot = form.querySelector('input[name="b_user_url"]');
+    let honeypot = form.querySelector('input[name="_hp_email_sec"]');
     if (!honeypot) {
       honeypot = document.createElement('input');
       honeypot.type = 'text';
-      honeypot.name = 'b_user_url';
+      honeypot.name = '_hp_email_sec';
       honeypot.className = 'hp-field';
       honeypot.tabIndex = -1;
-      honeypot.autocomplete = 'off';
+      honeypot.autocomplete = 'new-password';
       honeypot.setAttribute('aria-hidden', 'true');
       form.prepend(honeypot);
     }
@@ -39,6 +39,7 @@ export function initPrivateRegister() {
       form.appendChild(errorEl);
     }
 
+    const formInitTime = Date.now();
     let lastSubmissionTime = 0;
 
     form.addEventListener('submit', async (e) => {
@@ -52,9 +53,16 @@ export function initPrivateRegister() {
         return;
       }
 
+      // Time-based bot detection: bots submit instantaneously (< 800ms)
+      if (Date.now() - formInitTime < 800) {
+        console.warn('Spam submission filtered via interaction speed check.');
+        form.style.display = 'none';
+        return;
+      }
+
       // Rate Limiting: prevent rapid repetitive submissions
       const now = Date.now();
-      if (now - lastSubmissionTime < 3000) {
+      if (lastSubmissionTime > 0 && now - lastSubmissionTime < 3000) {
         errorEl.textContent = 'Please wait a moment before submitting again.';
         errorEl.style.display = 'block';
         return;

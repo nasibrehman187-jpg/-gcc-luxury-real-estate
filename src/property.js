@@ -448,8 +448,8 @@ function renderProperty(property) {
               <span class="form-error-text" id="form-error-text"></span>
             </div>
 
-            <!-- Anti-Bot Honeypot -->
-            <input type="text" name="b_address" id="cf-b_address" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <!-- Anti-Bot Honeypot with un-guessable name to prevent browser autofill triggers -->
+            <input type="text" name="_hp_sec_timestamp" id="cf-_hp_sec" class="hp-field" tabindex="-1" autocomplete="new-password" aria-hidden="true" />
 
             <!-- Field 1: Full Name -->
             <div class="form-group">
@@ -642,13 +642,14 @@ function initContactForm(property) {
   phoneInput?.addEventListener('input', () => clearFieldError(phoneInput, phoneError));
   emailInput?.addEventListener('input', () => clearFieldError(emailInput, emailError));
 
+  const formInitTime = Date.now();
   let lastSubmissionTime = 0;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Anti-Spam Honeypot Check: silently reject bot submissions
-    const honeypotVal = form.querySelector('input[name="b_address"]')?.value || '';
+    const honeypotVal = form.querySelector('input[name="_hp_sec_timestamp"]')?.value || '';
     if (honeypotVal) {
       console.warn('Spam submission filtered via honeypot.');
       form.style.display = 'none';
@@ -656,15 +657,24 @@ function initContactForm(property) {
       return;
     }
 
+    // Time-based bot detection: bots submit instantaneously (< 800ms)
+    if (Date.now() - formInitTime < 800) {
+      console.warn('Spam submission filtered via interaction speed check.');
+      form.style.display = 'none';
+      if (successBox) successBox.style.display = 'block';
+      return;
+    }
+
     // Rate Limiting: prevent rapid repetitive submissions
     const now = Date.now();
-    if (now - lastSubmissionTime < 3000) {
+    if (lastSubmissionTime > 0 && now - lastSubmissionTime < 3000) {
       if (formError) {
         if (formErrorText) formErrorText.textContent = 'Please wait a moment before submitting again.';
         formError.style.display = 'flex';
       }
       return;
     }
+    lastSubmissionTime = now;
 
     // Reset previous errors
     if (formError) {
