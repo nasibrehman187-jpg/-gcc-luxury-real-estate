@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HVHNGC4DN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8HVHNGC4DN');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact &amp; Private Consultation — GCC Luxury Real Estate</title>
+  <meta name="description" content="Request a confidential consultation with our senior advisory team in Dubai, Abu Dhabi, or Doha." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Mobile & PWA Theme -->
+  <meta name="theme-color" content="#1A1614" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="GCC Luxury" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="canonical" href="https://gcc-luxury-real-estate.com/contact" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact &amp; Private Consultation — GCC Luxury Real Estate" />
+  <meta property="og:description" content="Direct advisory access for high-net-worth acquisitions across the GCC." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gcc-luxury-real-estate.com/contact" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+
+  <style>
+  <style>
+    /* Compact Minimal Map/Coordinate Header Band */
+    .contact-hero {
+      position: relative;
+      padding: 7.8rem 2rem 2.5rem;
+      background: #171311;
+      border-bottom: 1px solid rgba(196, 164, 132, 0.16);
+      text-align: center;
+      overflow: hidden;
+    }
+    .contact-hero-bg-map {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.18;
+      z-index: 1;
+    }
+    .contact-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4.2vw, 3rem);
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.65rem;
+      line-height: 1.15;
+    }
+    .contact-hero-subtext {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--sandstone-light);
+      max-width: 620px;
+      margin: 0 auto 1.25rem;
+      line-height: 1.6;
+    }
+    .contact-coordinates-strip {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sandstone);
+      background: rgba(32, 27, 24, 0.7);
+      border: 1px solid rgba(196, 164, 132, 0.2);
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .contact-coordinates-strip span {
+      white-space: nowrap;
+    }
+    .coord-dot {
+      color: var(--gold);
+      opacity: 0.5;
+    }
+
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3.5rem;
+      max-width: 1100px;
+      margin: 3rem auto 6rem;
+      padding: 0 2rem;
+      align-items: start;
+    }
+
+    .consultation-box {
+      background: rgba(32, 27, 24, 0.95);
+      border: 1px solid rgba(196, 164, 132, 0.22);
+      border-radius: 4px;
+      padding: 2.5rem;
+      box-shadow: 0 12px 36px rgba(10, 8, 7, 0.6);
+    }
+    .consultation-box h2 {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      color: var(--cream);
+      margin-bottom: 0.4rem;
+    }
+    .consultation-box p {
+      font-size: 0.85rem;
+      color: var(--sandstone-light);
+      margin-bottom: 2rem;
+    }
+
+    .form-group-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .form-field label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sandstone);
+      font-weight: 500;
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      background: rgba(46, 39, 35, 0.65);
+      border: 1px solid rgba(196, 164, 132, 0.25);
+      border-radius: 3px;
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+    .form-field select option {
+      background: #241F1C;
+      color: var(--cream);
+    }
+    .form-field textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .consult-submit {
+      margin-top: 1rem;
+      width: 100%;
+      padding: 0.95rem 1.5rem;
+      background: var(--gold);
+      color: var(--text-dark);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      border-radius: 2px;
+      transition: background 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+    .consult-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+    .consult-submit.loading {
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+
+    .consult-error-box {
+      font-size: 0.76rem;
+      color: #F8B4B4;
+      background: rgba(220, 38, 38, 0.12);
+      border: 1px solid rgba(220, 38, 38, 0.3);
+      border-left: 3px solid #E05252;
+      border-radius: 2px;
+      padding: 0.65rem 0.85rem;
+      margin-bottom: 1rem;
+      line-height: 1.45;
+    }
+
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .office-card {
+      background: rgba(32, 27, 24, 0.92);
+      border: 1px solid rgba(196, 164, 132, 0.2);
+      border-radius: 4px;
+      padding: 1.75rem;
+    }
+    .office-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .office-address {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    .office-meta {
+      font-size: 0.78rem;
+      color: var(--sandstone-light);
+      line-height: 1.6;
+    }
+
+    .direct-whatsapp-card {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.12) 0%, rgba(20, 16, 14, 0.95) 100%);
+      border: 1px solid rgba(37, 211, 102, 0.35);
+      border-radius: 4px;
+      padding: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .wa-text h4 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+    .wa-text p {
+      font-size: 0.8rem;
+      color: var(--sandstone-light);
+    }
+    .wa-btn {
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 0.7rem 1.4rem;
+      border-radius: 2px;
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .wa-btn:hover {
+      background: #20BA5C;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 7.5rem 1.5rem 3rem; }
+      .contact-main-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .consultation-box { padding: 1.75rem 1.25rem; }
+      .direct-whatsapp-card { flex-direction: column; align-items: flex-start; }
+      .wa-btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="no-webgl page-transition">
+
+  <!-- ===================== TRUST BAR ===================== -->
+  <div class="trust-bar" role="complementary" aria-label="Trust and licensing metrics">
+    <div class="trust-bar-inner">
+      <span class="trust-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-i18n="trust.license">RERA &amp; DLD Licensed Brokerage · ORN 29481</span>
+      </span>
+      <span class="trust-sep">|</span>
+      <span class="trust-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span data-i18n="trust.years">15+ Years Excellence</span>
+      </span>
+      <span class="trust-sep">|</span>
+      <span class="trust-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <span data-i18n="trust.yield">Rental Yield: 6.8% – 9.2% p.a.</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar" class="scrolled" role="navigation" aria-label="Main Navigation">
+    <a href="/" class="nav-logo" aria-label="GCC Luxury Real Estate Home">
+      <span class="nav-logo-gcc">GCC</span>
+      <span class="nav-logo-text">Luxury Real Estate</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/" data-i18n="nav.home">Home</a>
+      <a href="/listings.html" data-i18n="nav.properties">Properties</a>
+      <div class="nav-dropdown">
+        <a href="/#locations" class="nav-dropdown-toggle" data-i18n="nav.locations">
+          Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="/locations/dubai.html">Dubai</a>
+          <a href="/locations/abu-dhabi.html">Abu Dhabi</a>
+          <a href="/locations/doha.html">Doha</a>
+        </div>
+      </div>
+      <a href="/investment.html" data-i18n="nav.investment">Investment</a>
+      <a href="/about.html" data-i18n="nav.about">About Us</a>
+      <a href="/contact.html" class="nav-link-active" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <div class="nav-right-actions">
+      <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Switch Language">
+        <span class="lang-label" data-i18n="nav.lang">العربية</span>
+      </button>
+      <a href="/contact.html" class="nav-cta" data-i18n="nav.bookViewing">Schedule Consultation</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div id="mobile-nav" class="mobile-nav">
+    <a href="/">Home</a>
+    <a href="/listings.html">Properties</a>
+    <a href="/locations/dubai.html">Dubai</a>
+    <a href="/locations/abu-dhabi.html">Abu Dhabi</a>
+    <a href="/locations/doha.html">Doha</a>
+    <a href="/investment.html">Investment</a>
+    <a href="/about.html">About Us</a>
+    <a href="/contact.html">Contact</a>
+    <button class="lang-toggle-btn mobile-lang-btn" id="mobile-lang-btn">
+      <span class="lang-label" data-i18n="nav.lang">العربية</span>
+    </button>
+    <a href="/contact.html" class="mobile-nav-cta">Schedule Consultation</a>
+  </div>
+
+  <!-- ===================== PAGE HEADER (Minimal Map & Coordinate Band) ===================== -->
+  <header class="contact-hero">
+    <!-- Subtle architectural coordinate grid SVG -->
+    <svg class="contact-hero-bg-map" viewBox="0 0 1200 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="coordGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#C4A484" stroke-width="0.75" stroke-dasharray="2 4"/>
+          <circle cx="60" cy="60" r="1.5" fill="#E0B04C"/>
+        </pattern>
+      </defs>
+      <rect width="1200" height="240" fill="url(#coordGrid)"/>
+      <path d="M 150 180 Q 400 120, 650 140 T 1050 90" fill="none" stroke="#E0B04C" stroke-width="1" stroke-dasharray="4 6" opacity="0.4"/>
+    </svg>
+
+    <div class="contact-hero-inner">
+      <p class="section-eyebrow">Confidential Representation Desk</p>
+      <h1 class="contact-hero-title">Private Consultation &amp; <span class="gold">Advisory Desk</span></h1>
+      <p class="contact-hero-subtext">
+        Engage directly with our managing partners for confidential acquisition advisory, off-market property dossiers, and portfolio structuring.
+      </p>
+      <div class="contact-coordinates-strip">
+        <span>Dubai: 25.2048° N, 55.2708° E</span>
+        <span class="coord-dot">◆</span>
+        <span>Abu Dhabi: 24.4539° N, 54.3773° E</span>
+        <span class="coord-dot">◆</span>
+        <span>Doha: 25.2854° N, 51.5310° E</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main>
+    <div class="contact-main-grid">
+      
+      <!-- Consultation Form Box -->
+      <div class="consultation-box">
+        <h2>Private Advisory Request</h2>
+        <p>All inquiries are handled under strict non-disclosure protocols by our senior partners.</p>
+
+        <div id="consult-error-alert" class="consult-error-box" style="display: none;"></div>
+
+        <form id="consultation-form">
+          <div class="form-group-wrap">
+            <div class="form-field">
+              <label>Full Legal / Corporate Name <span class="required-star">*</span></label>
+              <input type="text" name="name" placeholder="e.g. Sterling Family Office / Al-Ghanem Holdings" required />
+            </div>
+
+            <div class="form-field">
+              <label>Confidential Email Address <span class="required-star">*</span></label>
+              <input type="email" name="email" placeholder="client@domain.com" required />
+            </div>
+
+            <div class="form-field">
+              <label>Direct Telephone / WhatsApp <span class="required-star">*</span></label>
+              <input type="tel" name="phone" placeholder="+971 50 000 0000" required />
+            </div>
+
+            <div class="form-field">
+              <label>Target Market Focus</label>
+              <select name="market">
+                <option value="Dubai Ultra-Prime (Downtown &amp; Palm Jumeirah)">Dubai Ultra-Prime (Downtown &amp; Palm Jumeirah)</option>
+                <option value="Abu Dhabi Waterfront (Al Maryah &amp; Saadiyat)">Abu Dhabi Waterfront (Al Maryah &amp; Saadiyat)</option>
+                <option value="Doha Prime (The Pearl &amp; Lusail)">Doha Prime (The Pearl &amp; Lusail)</option>
+                <option value="Multi-Market GCC Portfolio Advisory">Multi-Market GCC Portfolio Advisory</option>
+                <option value="Off-Market Private Register Acquisition">Off-Market Private Register Acquisition</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label>Acquisition Requirements / Notes</label>
+              <textarea name="message" placeholder="Specify preferred square footage, yield parameters, or specific residence interest…"></textarea>
+            </div>
+
+            <button type="submit" id="consult-submit-btn" class="consult-submit">
+              Submit Advisory Request →
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Card -->
+        <div id="consult-success-card" class="form-success" style="display: none;">
+          <div class="success-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 class="success-title">Consultation Confirmed</h3>
+          <p class="success-desc">
+            Thank you. Your inquiry has been routed to our managing director. A senior partner will reach out via your preferred confidential channel within 4 business hours.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Info & Direct WhatsApp -->
+      <div class="contact-info-col">
+        
+        <!-- WhatsApp Direct Card -->
+        <div class="direct-whatsapp-card">
+          <div class="wa-text">
+            <h4>Direct Private WhatsApp &amp; Email</h4>
+            <p>Immediate discreet response from our client relations desk.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--sandstone-light);">
+              <strong>WhatsApp:</strong> <a href="https://wa.me/923062320099?text=Hi%2C%20I%27d%20like%20to%20request%20a%20private%20real%20estate%20consultation" style="color: var(--gold);">+92 306 2320099</a><br />
+              <strong>Email:</strong> <a href="mailto:nasibrehman187@gmail.com" style="color: var(--cream);">nasibrehman187@gmail.com</a>
+            </p>
+          </div>
+          <a href="https://wa.me/923062320099?text=Hi%2C%20I%27d%20like%20to%20request%20a%20private%20real%20estate%20consultation" target="_blank" rel="noopener" class="wa-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.013a9.634 9.634 0 0 1-4.907-1.344l-.352-.209-3.65.957.974-3.558-.23-.365A9.608 9.608 0 0 1 2.43 12.05c.002-5.316 4.33-9.643 9.65-9.643a9.58 9.58 0 0 1 6.824 2.825 9.58 9.58 0 0 1 2.822 6.826c-.003 5.316-4.33 9.643-9.647 9.643l-.028.084zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.832 11.832 0 0 0 1.587 5.945L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 23.8c6.59 0 11.95-5.335 11.953-11.893A11.82 11.82 0 0 0 20.52 3.449z"/></svg>
+            <span>Chat Directly</span>
+          </a>
+        </div>
+
+        <!-- Regional Offices -->
+        <div class="office-card">
+          <h3>Downtown Dubai (HQ)</h3>
+          <p class="office-address">Level 48, Al Saada Tower, Downtown Dubai, United Arab Emirates</p>
+          <p class="office-meta">Direct: +971 4 399 8200 &nbsp;|&nbsp; RERA Brokerage No. 29481</p>
+        </div>
+
+        <div class="office-card">
+          <h3>Abu Dhabi Advisory</h3>
+          <p class="office-address">Level 14, Al Maryah Financial Tower, Al Maryah Island, Abu Dhabi</p>
+          <p class="office-meta">Direct: +971 2 441 9000 &nbsp;|&nbsp; ADGM Regulated Office</p>
+        </div>
+
+        <div class="office-card">
+          <h3>Doha Private Office</h3>
+          <p class="office-address">Porto Arabia Boardwalk, Tower 22, The Pearl-Qatar, Doha</p>
+          <p class="office-meta">Direct: +974 4 489 1200 &nbsp;|&nbsp; QFC License 01428</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== FLOATING WHATSAPP BUTTON ===================== -->
+  <a href="https://wa.me/923062320099?text=Hi%2C%20I%27d%20like%20to%20request%20a%20private%20real%20estate%20consultation" 
+     class="floating-whatsapp" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.013a9.634 9.634 0 0 1-4.907-1.344l-.352-.209-3.65.957.974-3.558-.23-.365A9.608 9.608 0 0 1 2.43 12.05c.002-5.316 4.33-9.643 9.65-9.643a9.58 9.58 0 0 1 6.824 2.825 9.58 9.58 0 0 1 2.822 6.826c-.003 5.316-4.33 9.643-9.647 9.643l-.028.084zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.832 11.832 0 0 0 1.587 5.945L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 23.8c6.59 0 11.95-5.335 11.953-11.893A11.82 11.82 0 0 0 20.52 3.449z"/>
+    </svg>
+  </a>
+
+  <!-- ===================== MOBILE STICKY BOTTOM BAR ===================== -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:+923062320099" class="mobile-bar-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/923062320099?text=Hi%2C%20I%27m%20interested%20in%20your%20properties" target="_blank" rel="noopener" class="mobile-bar-btn mobile-bar-whatsapp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.013a9.634 9.634 0 0 1-4.907-1.344l-.352-.209-3.65.957.974-3.558-.23-.365A9.608 9.608 0 0 1 2.43 12.05c.002-5.316 4.33-9.643 9.65-9.643a9.58 9.58 0 0 1 6.824 2.825 9.58 9.58 0 0 1 2.822 6.826c-.003 5.316-4.33 9.643-9.647 9.643l-.028.084zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.832 11.832 0 0 0 1.587 5.945L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 23.8c6.59 0 11.95-5.335 11.953-11.893A11.82 11.82 0 0 0 20.52 3.449z"/>
+    </svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="/listings.html" class="mobile-bar-btn mobile-bar-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Properties</span>
+    </a>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="nav-logo-gcc">GCC</span>
+          <span class="nav-logo-text">Luxury Real Estate</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">Discreet representation for prime residential acquisitions across the Gulf Cooperation Council.</p>
+        <div class="footer-regulatory-seal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span data-i18n="trust.license">Licensed Brokerage · RERA ORN 29481</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.portfolio">Portfolio</h4>
+        <a href="/listings.html" data-i18n="nav.properties">Active Listings</a>
+        <a href="/investment.html" data-i18n="nav.investment">Investment Intelligence</a>
+        <a href="/about.html" data-i18n="nav.about">About Us</a>
+        <a href="/contact.html" data-i18n="nav.contact">Private Advisory</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.offices">Offices</h4>
+        <p><strong>Dubai:</strong> Level 48, Al Saada Tower, Downtown Dubai</p>
+        <p><strong>Abu Dhabi:</strong> The Galleria, Al Maryah Island</p>
+        <p><strong>Doha:</strong> Porto Arabia, The Pearl-Qatar</p>
+        <p style="margin-top: 0.85rem; color: var(--sandstone);">
+          <strong>Direct Desk:</strong> <a href="mailto:nasibrehman187@gmail.com" style="color: var(--cream);">nasibrehman187@gmail.com</a><br />
+          <strong>WhatsApp:</strong> <a href="https://wa.me/923062320099?text=Hi%2C%20I%27m%20interested%20in%20your%20properties" style="color: var(--gold);">+92 306 2320099</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.register">Private Register</h4>
+        <p class="footer-newsletter-text" data-i18n="footer.registerSub">Access off-market listings before public release.</p>
+        <form class="footer-newsletter">
+          <div class="footer-newsletter-row">
+            <input type="email" placeholder="Your private email" aria-label="Email for private register" required />
+            <button type="submit" aria-label="Join Private Register">→</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-legal-notice">
+      GCC Luxury Real Estate LLC is an independent luxury brokerage regulated by the Real Estate Regulatory Agency (RERA) and Dubai Land Department (DLD). License No. 849201 · Broker Registration ORN 29481.
+    </div>
+
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2009–2025 GCC Luxury Real Estate LLC. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/terms.html">Terms of Engagement</a>
+        <a href="/privacy.html">Privacy Protocol</a>
+        <a href="/contact.html">Regulatory Disclosures</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/contact.js"></script>
+</body>
+</html>

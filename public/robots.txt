@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gcc-luxury-real-estate.com/sitemap.xml

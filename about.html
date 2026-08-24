@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8HVHNGC4DN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8HVHNGC4DN');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — GCC Luxury Real Estate</title>
+  <meta name="description" content="15+ years of discreet representation, advisory excellence, and unmatched access to premier luxury residential acquisitions across the GCC." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Mobile & PWA Theme -->
+  <meta name="theme-color" content="#1A1614" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="GCC Luxury" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="canonical" href="https://gcc-luxury-real-estate.com/about" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Us — GCC Luxury Real Estate" />
+  <meta property="og:description" content="15+ years representing sovereign clients, family offices, and private investors across Dubai, Abu Dhabi, and Doha." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gcc-luxury-real-estate.com/about" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+
+  <style>
+    /* Clean, Light Architectural Hero */
+    .about-hero {
+      position: relative;
+      padding: 10.5rem 3rem 4.5rem;
+      background-image: 
+        linear-gradient(180deg, rgba(26, 22, 20, 0.65) 0%, rgba(32, 27, 24, 0.82) 75%, var(--bg-primary) 100%),
+        radial-gradient(circle at 60% 40%, rgba(224, 176, 76, 0.12), transparent 60%),
+        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center 45%;
+      background-repeat: no-repeat;
+      border-bottom: 1px solid rgba(196, 164, 132, 0.18);
+      text-align: center;
+    }
+    .about-hero-inner {
+      max-width: 840px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .about-hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+    .about-hero-subtext {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--cream);
+      opacity: 0.92;
+      line-height: 1.8;
+      max-width: 680px;
+      margin: 0 auto 1.75rem;
+    }
+    .about-hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(36, 31, 28, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(224, 176, 76, 0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+    }
+
+    /* Airy Story Section */
+    .about-story-section {
+      max-width: 1060px;
+      margin: 5.5rem auto;
+      padding: 0 2rem;
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .story-content h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      color: var(--cream);
+      margin-bottom: 1.35rem;
+      line-height: 1.25;
+    }
+    .story-content p {
+      font-size: 0.94rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--cream);
+      opacity: 0.88;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Minimalist Metrics (No Heavy Box) */
+    .story-metrics-clean {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 2rem 2.25rem;
+      background: rgba(36, 30, 27, 0.5);
+      border: 1px solid rgba(196, 164, 132, 0.15);
+      border-radius: 4px;
+    }
+    .story-metric {
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(196, 164, 132, 0.12);
+    }
+    .story-metric:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .story-metric-num {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.15rem;
+      line-height: 1.2;
+    }
+    .story-metric-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sandstone-light);
+    }
+
+    /* Clean Advisory Pillars */
+    .about-values-section {
+      background: rgba(24, 20, 18, 0.6);
+      border-top: 1px solid rgba(196, 164, 132, 0.12);
+      border-bottom: 1px solid rgba(196, 164, 132, 0.12);
+      padding: 6rem 2rem;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 3.5rem auto 0;
+    }
+    .value-card {
+      background: rgba(36, 31, 28, 0.6);
+      border: 1px solid rgba(196, 164, 132, 0.16);
+      border-radius: 4px;
+      padding: 2.25rem 1.85rem;
+      text-align: left;
+      transition: border-color 0.3s ease;
+    }
+    .value-card:hover {
+      border-color: rgba(224, 176, 76, 0.4);
+    }
+    .value-icon {
+      color: var(--gold);
+      margin-bottom: 1.1rem;
+      display: inline-flex;
+    }
+    .value-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .value-card p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--cream);
+      opacity: 0.85;
+    }
+
+    /* Advisory Process Section */
+    .about-process-section {
+      padding: 6rem 2rem;
+      background: rgba(26, 22, 20, 0.45);
+      border-top: 1px solid rgba(196, 164, 132, 0.12);
+      border-bottom: 1px solid rgba(196, 164, 132, 0.12);
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 3.5rem auto 0;
+      text-align: left;
+    }
+    .process-step-card {
+      background: rgba(36, 31, 28, 0.6);
+      border: 1px solid rgba(196, 164, 132, 0.16);
+      border-radius: 4px;
+      padding: 2.25rem 1.6rem;
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .process-step-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(224, 176, 76, 0.45);
+    }
+    .process-step-num {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      line-height: 1;
+    }
+    .process-step-title {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--cream);
+      margin-bottom: 0.65rem;
+      font-weight: 600;
+    }
+    .process-step-desc {
+      font-size: 0.86rem;
+      color: var(--sandstone);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* Realistic Testimonials */
+    .testimonials-wrap {
+      padding: 6rem 2rem;
+      background: var(--bg-primary);
+    }
+
+    /* Consultation Banner */
+    .cta-banner {
+      background: rgba(36, 31, 28, 0.75);
+      border: 1px solid rgba(196, 164, 132, 0.22);
+      border-radius: 4px;
+      padding: 3.5rem 2.5rem;
+      max-width: 1060px;
+      margin: 4.5rem auto 6.5rem;
+      text-align: center;
+    }
+    .cta-banner h3 {
+      font-family: var(--font-heading);
+      font-size: 1.85rem;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    .cta-banner p {
+      font-size: 0.95rem;
+      color: var(--sandstone-light);
+      max-width: 620px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 992px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero { padding: 7.5rem 1.5rem 3rem; }
+      .about-story-section { margin: 3.5rem auto; }
+      .story-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-values-section { padding: 4rem 1.25rem; }
+      .values-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .about-process-section { padding: 4rem 1.25rem; }
+      .process-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .testimonials-wrap { padding: 4rem 1.25rem; }
+      .cta-banner { padding: 2.5rem 1.5rem; margin: 3rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body class="no-webgl page-transition">
+
+  <!-- ===================== TRUST BAR ===================== -->
+  <div class="trust-bar" role="complementary" aria-label="Trust and licensing metrics">
+    <div class="trust-bar-inner">
+      <span class="trust-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span data-i18n="trust.license">RERA &amp; DLD Licensed Brokerage · ORN 29481</span>
+      </span>
+      <span class="trust-sep">|</span>
+      <span class="trust-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <span data-i18n="trust.years">15+ Years in Gulf Real Estate</span>
+      </span>
+      <span class="trust-sep">|</span>
+      <span class="trust-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        <span data-i18n="trust.yield">Rental Yields: 6.8% – 9.2% p.a.</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar" class="scrolled" role="navigation" aria-label="Main Navigation">
+    <a href="/" class="nav-logo" aria-label="GCC Luxury Real Estate Home">
+      <span class="nav-logo-gcc">GCC</span>
+      <span class="nav-logo-text">Luxury Real Estate</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/" data-i18n="nav.home">Home</a>
+      <a href="/listings.html" data-i18n="nav.properties">Properties</a>
+      <div class="nav-dropdown">
+        <a href="/#locations" class="nav-dropdown-toggle" data-i18n="nav.locations">
+          Locations <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l4 4 4-4"/></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          <a href="/locations/dubai.html">Dubai</a>
+          <a href="/locations/abu-dhabi.html">Abu Dhabi</a>
+          <a href="/locations/doha.html">Doha</a>
+        </div>
+      </div>
+      <a href="/investment.html" data-i18n="nav.investment">Investment</a>
+      <a href="/about.html" class="nav-link-active" data-i18n="nav.about">About Us</a>
+      <a href="/contact.html" data-i18n="nav.contact">Contact</a>
+    </div>
+
+    <div class="nav-right-actions">
+      <button class="lang-toggle-btn" id="lang-toggle-btn" aria-label="Switch Language">
+        <span class="lang-label" data-i18n="nav.lang">العربية</span>
+      </button>
+      <a href="/contact.html" class="nav-cta" data-i18n="nav.bookViewing">Schedule Consultation</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div id="mobile-nav" class="mobile-nav">
+    <a href="/">Home</a>
+    <a href="/listings.html">Properties</a>
+    <a href="/locations/dubai.html">Dubai</a>
+    <a href="/locations/abu-dhabi.html">Abu Dhabi</a>
+    <a href="/locations/doha.html">Doha</a>
+    <a href="/investment.html">Investment</a>
+    <a href="/about.html">About Us</a>
+    <a href="/contact.html">Contact</a>
+    <button class="lang-toggle-btn mobile-lang-btn" id="mobile-lang-btn">
+      <span class="lang-label" data-i18n="nav.lang">العربية</span>
+    </button>
+    <a href="/contact.html" class="mobile-nav-cta">Schedule Consultation</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <header class="about-hero">
+    <div class="about-hero-inner">
+      <p class="section-eyebrow">Boutique Gulf Property Advisory · Est. 2009</p>
+      <h1 class="about-hero-title">Thoughtful Guidance for <span class="gold">Prime Gulf Living.</span></h1>
+      <p class="about-hero-subtext">
+        An independent boutique brokerage helping private buyers, expatriates, and investors navigate residential purchases across Dubai, Abu Dhabi, and Doha with clear market data and personal attention.
+      </p>
+      <div>
+        <span class="about-hero-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Licensed Brokerage · RERA ORN 29481 · Est. 2009
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main>
+    <!-- Brand Story Section -->
+    <section class="about-story-section">
+      <div class="story-grid">
+        <div class="story-content">
+          <p class="section-eyebrow">Our Approach</p>
+          <h2>Focused advisory, <span class="gold">grounded in local insight.</span></h2>
+          <p>
+            Founded in Dubai in 2009, GCC Luxury Real Estate was created as an independent, relationship-driven brokerage. We focus on a small, carefully selected portfolio of quality residences, waterfront homes, and verified investment opportunities across the UAE and Qatar.
+          </p>
+          <p>
+            Rather than managing thousands of generic listings, our senior advisors work directly with each client. We inspect build quality, verify service charges, review realistic rental demand, and coordinate the complete transaction process from initial viewings to Land Department title deed handover.
+          </p>
+          <p>
+            Fully licensed under the Dubai Land Department and Real Estate Regulatory Agency (RERA ORN 29481), we provide objective representation and direct advisor contact whenever you have questions.
+          </p>
+        </div>
+
+        <div class="story-metrics-clean">
+          <div class="story-metric">
+            <div class="story-metric-num">15+ Years</div>
+            <div class="story-metric-label">Active Gulf Advisory Experience</div>
+          </div>
+          <div class="story-metric">
+            <div class="story-metric-num">4 Key Cities</div>
+            <div class="story-metric-label">Dubai · Abu Dhabi · Doha · RAK</div>
+          </div>
+          <div class="story-metric">
+            <div class="story-metric-num">98%</div>
+            <div class="story-metric-label">Client Advisory Retention</div>
+          </div>
+          <div class="story-metric">
+            <div class="story-metric-num">Direct Contact</div>
+            <div class="story-metric-label">Dedicated Senior Advisory Access</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values / Advisory Pillars -->
+    <section class="about-values-section">
+      <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+        <p class="section-eyebrow">How We Work</p>
+        <h2 class="section-title">Our Commitment to Every Client</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+            </div>
+            <h3>Clear, Objective Advice</h3>
+            <p>Direct assessments on construction quality, realistic rental yields, and upcoming community developments before you make an offer.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3>End-to-End Coordination</h3>
+            <p>We manage contract reviews, escrow verification, Land Department transfer appointments, and handover inspections from start to finish.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <h3>Personal Attention</h3>
+            <p>One senior advisor dedicated to your requirements, communicating on your schedule with complete discretion and zero high-pressure sales.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advisory Process Section -->
+    <section class="about-process-section">
+      <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+        <p class="section-eyebrow">Our Methodology</p>
+        <h2 class="section-title">The Advisory Process</h2>
+        <p class="section-subtitle" style="margin: 0 auto 3rem;">
+          A structured, confidential four-stage framework designed for clear decision-making and seamless title transfer.
+        </p>
+
+        <div class="process-grid">
+          <div class="process-step-card">
+            <div class="process-step-num">01</div>
+            <h3 class="process-step-title">Discover</h3>
+            <p class="process-step-desc">We define your acquisition criteria, lifestyle parameters, and portfolio yield objectives.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="process-step-num">02</div>
+            <h3 class="process-step-title">Evaluate</h3>
+            <p class="process-step-desc">We conduct thorough due diligence on build specifications, historical service charges, and true market value.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="process-step-num">03</div>
+            <h3 class="process-step-title">View</h3>
+            <p class="process-step-desc">We coordinate private on-site walkthroughs and discrete access with developer principals.</p>
+          </div>
+          <div class="process-step-card">
+            <div class="process-step-num">04</div>
+            <h3 class="process-step-title">Acquire</h3>
+            <p class="process-step-desc">We oversee escrow verification, contract finalization, and official Land Department title deed transfer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section class="testimonials-wrap">
+      <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+        <p class="section-eyebrow">Client Feedback</p>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle" style="margin: 0 auto 3.5rem;">
+          Genuine feedback from buyers, investors, and homeowners we have had the privilege to assist.
+        </p>
+
+        <div class="testimonials-grid" style="margin-top: 0;">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote class="testi-quote">
+              “We worked with Tariq to find our villa in Palm Jumeirah. The whole process was straightforward, transparent on service charges and yields, and completed without any unexpected delays.”
+            </blockquote>
+            <div class="testi-author">
+              <span class="testi-name">Omar &amp; Sarah K.</span>
+              <span class="testi-role">Residents, Palm Jumeirah</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote class="testi-quote">
+              “As an overseas buyer from London, having an advisor who actually inspects the build quality and walks you through the DLD escrow process made all the difference.”
+            </blockquote>
+            <div class="testi-author">
+              <span class="testi-name">Marcus Vance</span>
+              <span class="testi-role">Private Investor, UK</span>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card">
+            <div class="testi-stars">★★★★★</div>
+            <blockquote class="testi-quote">
+              “Clear market data without the aggressive sales pitch. They helped us compare off-plan options in Downtown Dubai against ready units in Doha with complete clarity.”
+            </blockquote>
+            <div class="testi-author">
+              <span class="testi-name">Nasser Al-Hajri</span>
+              <span class="testi-role">Property Owner, Doha</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Logos Strip -->
+    <section class="developer-strip-section" style="border-top: 1px solid rgba(196, 164, 132, 0.15); border-bottom: 1px solid rgba(196, 164, 132, 0.15);">
+      <div class="developer-strip-inner">
+        <p class="developer-strip-title" data-i18n="section.developerPartners">Master Developer Portfolios &amp; Strategic Partners</p>
+        <div class="developer-logos-row">
+          <div class="dev-logo-item">
+            <span class="dev-name">Meridian Developments</span>
+            <span class="dev-sub">Downtown &amp; Waterfront</span>
+          </div>
+          <span class="dev-sep">◆</span>
+          <div class="dev-logo-item">
+            <span class="dev-name">Zenith Group</span>
+            <span class="dev-sub">Abu Dhabi Prime</span>
+          </div>
+          <span class="dev-sep">◆</span>
+          <div class="dev-logo-item">
+            <span class="dev-name">Coastline Estates</span>
+            <span class="dev-sub">Luxury Towers</span>
+          </div>
+          <span class="dev-sep">◆</span>
+          <div class="dev-logo-item">
+            <span class="dev-name">Horizon Properties</span>
+            <span class="dev-sub">Ultra-Prime Bespoke</span>
+          </div>
+          <span class="dev-sep">◆</span>
+          <div class="dev-logo-item">
+            <span class="dev-name">Aurelia Developments</span>
+            <span class="dev-sub">Island Destinations</span>
+          </div>
+        </div>
+        <p class="developer-disclaimer" data-i18n="section.developerDisclaimer">*Illustrative developer representation. Independent brokerage advisory.</p>
+      </div>
+    </section>
+
+    <!-- CTA Consultation Banner -->
+    <div class="cta-banner">
+      <h3>Planning Your Next Move in the Gulf?</h3>
+      <p>
+        Speak directly with a senior advisor for clear, confidential guidance on current residential opportunities across Dubai, Abu Dhabi, and Doha.
+      </p>
+      <a href="/contact.html" class="hero-btn-primary">Schedule a Private Consultation</a>
+    </div>
+  </main>
+  <!-- ===================== FLOATING WHATSAPP BUTTON ===================== -->
+  <a href="https://wa.me/923062320099?text=Hi%2C%20I%27m%20interested%20in%20your%20properties" 
+     class="floating-whatsapp" 
+     target="_blank" 
+     rel="noopener" 
+     aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.013a9.634 9.634 0 0 1-4.907-1.344l-.352-.209-3.65.957.974-3.558-.23-.365A9.608 9.608 0 0 1 2.43 12.05c.002-5.316 4.33-9.643 9.65-9.643a9.58 9.58 0 0 1 6.824 2.825 9.58 9.58 0 0 1 2.822 6.826c-.003 5.316-4.33 9.643-9.647 9.643l-.028.084zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.832 11.832 0 0 0 1.587 5.945L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 23.8c6.59 0 11.95-5.335 11.953-11.893A11.82 11.82 0 0 0 20.52 3.449z"/>
+    </svg>
+  </a>
+
+  <!-- ===================== MOBILE STICKY BOTTOM BAR ===================== -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:+923062320099" class="mobile-bar-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+    </a>
+    <a href="https://wa.me/923062320099?text=Hi%2C%20I%27m%20interested%20in%20your%20properties" target="_blank" rel="noopener" class="mobile-bar-btn mobile-bar-whatsapp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.013a9.634 9.634 0 0 1-4.907-1.344l-.352-.209-3.65.957.974-3.558-.23-.365A9.608 9.608 0 0 1 2.43 12.05c.002-5.316 4.33-9.643 9.65-9.643a9.58 9.58 0 0 1 6.824 2.825 9.58 9.58 0 0 1 2.822 6.826c-.003 5.316-4.33 9.643-9.647 9.643l-.028.084zM20.52 3.449C18.24 1.245 15.24 0 12.05 0 5.463 0 .104 5.334.101 11.893a11.832 11.832 0 0 0 1.587 5.945L0 24l6.335-1.652A11.882 11.882 0 0 0 12.05 23.8c6.59 0 11.95-5.335 11.953-11.893A11.82 11.82 0 0 0 20.52 3.449z"/>
+    </svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="/listings.html" class="mobile-bar-btn mobile-bar-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Properties</span>
+    </a>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="contact">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="nav-logo-gcc">GCC</span>
+          <span class="nav-logo-text">Luxury Real Estate</span>
+        </div>
+        <p class="footer-tagline" data-i18n="footer.tagline">Discreet representation for prime residential acquisitions across the Gulf Cooperation Council.</p>
+        <div class="footer-regulatory-seal">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span data-i18n="trust.license">Licensed Brokerage · RERA ORN 29481</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.portfolio">Portfolio</h4>
+        <a href="/listings.html" data-i18n="nav.properties">Active Listings</a>
+        <a href="/investment.html" data-i18n="nav.investment">Investment Intelligence</a>
+        <a href="/about.html" data-i18n="nav.about">About Us</a>
+        <a href="/contact.html" data-i18n="nav.contact">Private Advisory</a>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.offices">Offices</h4>
+        <p><strong>Dubai:</strong> Level 48, Al Saada Tower, Downtown Dubai</p>
+        <p><strong>Abu Dhabi:</strong> The Galleria, Al Maryah Island</p>
+        <p><strong>Doha:</strong> Porto Arabia, The Pearl-Qatar</p>
+        <p style="margin-top: 0.85rem; color: var(--sandstone);">
+          <strong>Direct Desk:</strong> <a href="mailto:nasibrehman187@gmail.com" style="color: var(--cream);">nasibrehman187@gmail.com</a><br />
+          <strong>WhatsApp:</strong> <a href="https://wa.me/923062320099?text=Hi%2C%20I%27m%20interested%20in%20your%20properties" style="color: var(--gold);">+92 306 2320099</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-i18n="footer.register">Private Register</h4>
+        <p class="footer-newsletter-text" data-i18n="footer.registerSub">Access off-market listings before public release.</p>
+        <form class="footer-newsletter">
+          <div class="footer-newsletter-row">
+            <input type="email" placeholder="Your private email" aria-label="Email for private register" required />
+            <button type="submit" aria-label="Join Private Register">→</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-legal-notice">
+      GCC Luxury Real Estate LLC is an independent luxury brokerage regulated by the Real Estate Regulatory Agency (RERA) and Dubai Land Department (DLD). License No. 849201 · Broker Registration ORN 29481.
+    </div>
+
+    <div class="footer-bottom">
+      <p data-i18n="footer.copyright">&copy; 2009–2025 GCC Luxury Real Estate LLC. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="/terms.html">Terms of Engagement</a>
+        <a href="/privacy.html">Privacy Protocol</a>
+        <a href="/contact.html">Regulatory Disclosures</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/register.js"></script>
+</body>
+</html>
