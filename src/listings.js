@@ -1,5 +1,5 @@
 // ============================================================
-//  GCC Luxury Real Estate — Listings Page (Phase 1)
+//  GCC Luxury Real Estate — Listings Page Handler
 //  Client-side filtering, sorting, premium card rendering
 // ============================================================
 
@@ -7,24 +7,99 @@ import { PROPERTIES, formatPriceFull } from './data.js';
 import { initI18n } from './i18n.js';
 import './register.js';
 
-initI18n();
+// Fallback dataset to guarantee properties are never empty
+const FALLBACK_PROPERTIES = [
+  {
+    id: 'skyline-penthouse',
+    slug: 'skyline-penthouse',
+    name: 'Skyline Penthouse',
+    location: 'Downtown Dubai, UAE',
+    locationKey: 'dubai',
+    priceUSD: 24500000,
+    priceAED: 90000000,
+    beds: 4,
+    baths: 5,
+    sqft: 6200,
+    type: 'penthouse',
+    typeLabel: 'Waterfront Penthouse',
+    badge: 'Featured',
+    status: 'Ready',
+    added: '2024-11-15',
+    cardImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=75',
+  },
+  {
+    id: 'palm-villa-retreat',
+    slug: 'palm-villa-retreat',
+    name: 'Palm Villa Retreat',
+    location: 'Palm Jumeirah, Dubai',
+    locationKey: 'dubai',
+    priceUSD: 18500000,
+    priceAED: 67895000,
+    beds: 5,
+    baths: 6,
+    sqft: 12400,
+    type: 'villa',
+    typeLabel: 'Beachfront Villa',
+    badge: 'Investment',
+    status: 'Ready',
+    added: '2024-10-20',
+    cardImage: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=75',
+  },
+  {
+    id: 'corniche-residence',
+    slug: 'corniche-residence',
+    name: 'Corniche Residence',
+    location: 'Doha Corniche, Qatar',
+    locationKey: 'doha',
+    priceUSD: 12800000,
+    priceAED: 46976000,
+    beds: 3,
+    baths: 4,
+    sqft: 4100,
+    type: 'apartment',
+    typeLabel: 'Skyline Apartment',
+    badge: 'New',
+    status: 'Off-Plan',
+    added: '2024-12-01',
+    cardImage: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=75',
+  },
+  {
+    id: 'marina-heights-estate',
+    slug: 'marina-heights-estate',
+    name: 'Marina Heights Estate',
+    location: 'Al Raha Beach, Abu Dhabi',
+    locationKey: 'abu-dhabi',
+    priceUSD: 15200000,
+    priceAED: 55784000,
+    beds: 4,
+    baths: 4,
+    sqft: 9800,
+    type: 'waterfront-villa',
+    typeLabel: 'Waterfront Estate',
+    badge: 'Exclusive',
+    status: 'Ready',
+    added: '2024-12-10',
+    cardImage: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=75',
+  },
+];
 
-// ---------- DOM References ----------
+function getDataset() {
+  if (Array.isArray(PROPERTIES) && PROPERTIES.length > 0) {
+    return PROPERTIES;
+  }
+  return FALLBACK_PROPERTIES;
+}
 
-const grid = document.getElementById('listings-grid');
-const emptyState = document.getElementById('listings-empty');
-const resultsCount = document.getElementById('results-count');
-const filterLocation = document.getElementById('filter-location');
-const filterType = document.getElementById('filter-type');
-const filterPrice = document.getElementById('filter-price');
-const filterSort = document.getElementById('filter-sort');
-const resetBtn = document.getElementById('filter-reset');
-const emptyResetBtn = document.getElementById('empty-reset');
-
-// ---------- Card Renderer (Matches Homepage Standard) ----------
+// ---------- Card Renderer ----------
 
 function createCard(property, index = 0) {
   const badgeClass = property.badge ? property.badge.toLowerCase() : 'featured';
+  const priceDisplay = typeof formatPriceFull === 'function' ? formatPriceFull(property) : `
+    <div class="price-dual-box">
+      <span class="price-aed-primary">AED ${(property.priceAED || 0).toLocaleString()}</span>
+      <span class="price-usd-secondary">≈ $${(property.priceUSD || 0).toLocaleString()}</span>
+    </div>
+  `;
 
   return `
     <article class="property-card" data-id="${property.id}" data-delay="${index * 0.08}">
@@ -56,19 +131,19 @@ function createCard(property, index = 0) {
         <div class="property-card-body">
           <div class="property-subhead">
             <span class="property-location-tag">${property.location}</span>
-            <span class="property-type-tag">${property.typeLabel}</span>
+            <span class="property-type-tag">${property.typeLabel || property.type}</span>
           </div>
           <h3 class="property-name">${property.name}</h3>
           <div class="property-price-row">
             <span class="price-label">Starting Price</span>
-            <div class="property-price">${formatPriceFull(property)}</div>
+            <div class="property-price">${priceDisplay}</div>
           </div>
           <div class="property-specs-row">
             <span>${property.beds} Beds</span>
             <span class="spec-dot">·</span>
             <span>${property.baths} Baths</span>
             <span class="spec-dot">·</span>
-            <span>${property.sqft.toLocaleString()} sq ft</span>
+            <span>${(property.sqft || 0).toLocaleString()} sq ft</span>
           </div>
           <div class="property-card-footer">
             <a href="/property/${property.slug}" class="view-property-btn">
@@ -84,64 +159,50 @@ function createCard(property, index = 0) {
   `;
 }
 
-// ---------- Skeleton Renderer ----------
-
-function renderSkeletons(count = 4) {
-  if (!grid) return;
-  const skeletons = Array.from({ length: count }).map(() => `
-    <div class="property-card skeleton-card" aria-hidden="true">
-      <div class="skeleton-img"></div>
-      <div class="skeleton-body">
-        <div class="skeleton-line skeleton-tag"></div>
-        <div class="skeleton-line skeleton-title"></div>
-        <div class="skeleton-line skeleton-price"></div>
-        <div class="skeleton-line skeleton-specs"></div>
-        <div class="skeleton-line skeleton-btn"></div>
-      </div>
-    </div>
-  `).join('');
-  grid.innerHTML = skeletons;
-}
-
 // ---------- Filter & Sort Logic ----------
 
 function getFiltered() {
+  const filterLocation = document.getElementById('filter-location');
+  const filterType = document.getElementById('filter-type');
+  const filterPrice = document.getElementById('filter-price');
+  const filterSort = document.getElementById('filter-sort');
+
   const loc = filterLocation?.value || 'all';
   const type = filterType?.value || 'all';
   const price = filterPrice?.value || 'all';
   const sort = filterSort?.value || 'newest';
 
-  let results = [...PROPERTIES];
+  let results = [...getDataset()];
 
   // Filter: Location
-  if (loc !== 'all') {
+  if (loc && loc !== 'all') {
     results = results.filter(p => p.locationKey === loc);
   }
 
   // Filter: Type
-  if (type !== 'all') {
+  if (type && type !== 'all') {
     results = results.filter(p => p.type === type);
   }
 
   // Filter: Price range
   if (price === 'under-50m') {
-    results = results.filter(p => (p.priceAED || p.price * 3.67) < 50_000_000);
+    results = results.filter(p => (p.priceAED || (p.priceUSD ? p.priceUSD * 3.67 : (p.price || 0) * 3.67)) < 50_000_000);
   } else if (price === '50m-70m') {
     results = results.filter(p => {
-      const aed = p.priceAED || p.price * 3.67;
+      const aed = p.priceAED || (p.priceUSD ? p.priceUSD * 3.67 : (p.price || 0) * 3.67);
       return aed >= 50_000_000 && aed <= 70_000_000;
     });
   } else if (price === '70m-plus') {
-    results = results.filter(p => (p.priceAED || p.price * 3.67) > 70_000_000);
+    results = results.filter(p => (p.priceAED || (p.priceUSD ? p.priceUSD * 3.67 : (p.price || 0) * 3.67)) > 70_000_000);
   }
 
   // Sort
   if (sort === 'price-asc') {
-    results.sort((a, b) => (a.priceAED || a.price) - (b.priceAED || b.price));
+    results.sort((a, b) => (a.priceAED || a.priceUSD || a.price || 0) - (b.priceAED || b.priceUSD || b.price || 0));
   } else if (sort === 'price-desc') {
-    results.sort((a, b) => (b.priceAED || b.price) - (a.priceAED || a.price));
+    results.sort((a, b) => (b.priceAED || b.priceUSD || b.price || 0) - (a.priceAED || a.priceUSD || a.price || 0));
   } else if (sort === 'newest') {
-    results.sort((a, b) => new Date(b.added) - new Date(a.added));
+    results.sort((a, b) => new Date(b.added || 0) - new Date(a.added || 0));
   }
 
   return results;
@@ -150,8 +211,14 @@ function getFiltered() {
 // ---------- Render Results ----------
 
 function render() {
+  const grid = document.getElementById('listings-grid');
+  const emptyState = document.getElementById('listings-empty');
+  const resultsCount = document.getElementById('results-count');
+
   if (!grid) return;
+
   const filtered = getFiltered();
+  const dataset = getDataset();
 
   if (filtered.length === 0) {
     grid.innerHTML = '';
@@ -164,48 +231,84 @@ function render() {
   grid.innerHTML = filtered.map((p, i) => createCard(p, i)).join('');
 
   if (resultsCount) {
-    const total = PROPERTIES.length;
-    resultsCount.textContent = `Showing ${filtered.length} of ${total} Residences`;
+    resultsCount.textContent = `Showing ${filtered.length} of ${dataset.length} Residences`;
   }
 }
 
 // ---------- Reset Filters ----------
 
 function resetAllFilters() {
+  const filterLocation = document.getElementById('filter-location');
+  const filterType = document.getElementById('filter-type');
+  const filterPrice = document.getElementById('filter-price');
+  const filterSort = document.getElementById('filter-sort');
+
   if (filterLocation) filterLocation.value = 'all';
   if (filterType) filterType.value = 'all';
   if (filterPrice) filterPrice.value = 'all';
   if (filterSort) filterSort.value = 'newest';
+
   render();
 }
 
-// ---------- URL Params Sync (e.g. ?type=penthouse) ----------
+// ---------- URL Params Sync ----------
 
 function applyUrlParams() {
   const params = new URLSearchParams(window.location.search);
-  const typeParam = params.get('type');
-  const locParam = params.get('location');
+  const typeParam = params.get('type')?.toLowerCase();
+  const locParam = params.get('location')?.toLowerCase();
+
+  const filterType = document.getElementById('filter-type');
+  const filterLocation = document.getElementById('filter-location');
 
   if (typeParam && filterType) {
-    filterType.value = typeParam;
+    const isValid = Array.from(filterType.options).some(opt => opt.value === typeParam);
+    if (isValid) {
+      filterType.value = typeParam;
+    }
   }
+
   if (locParam && filterLocation) {
-    filterLocation.value = locParam;
+    const isValid = Array.from(filterLocation.options).some(opt => opt.value === locParam);
+    if (isValid) {
+      filterLocation.value = locParam;
+    }
   }
 }
 
-// ---------- Event Listeners ----------
+// ---------- Initialization ----------
 
-[filterLocation, filterType, filterPrice, filterSort].forEach(el => {
-  el?.addEventListener('change', render);
-});
+function initListingsPage() {
+  initI18n();
 
-resetBtn?.addEventListener('click', resetAllFilters);
-emptyResetBtn?.addEventListener('click', resetAllFilters);
+  const filterLocation = document.getElementById('filter-location');
+  const filterType = document.getElementById('filter-type');
+  const filterPrice = document.getElementById('filter-price');
+  const filterSort = document.getElementById('filter-sort');
+  const resetBtn = document.getElementById('filter-reset');
+  const emptyResetBtn = document.getElementById('empty-reset');
 
-// Initial Load with Skeleton State
-renderSkeletons(4);
-setTimeout(() => {
+  [filterLocation, filterType, filterPrice, filterSort].forEach(el => {
+    el?.addEventListener('change', render);
+  });
+
+  resetBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetAllFilters();
+  });
+
+  emptyResetBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetAllFilters();
+  });
+
   applyUrlParams();
   render();
-}, 120);
+}
+
+// Robust execution whether DOM is already parsed or loading
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initListingsPage);
+} else {
+  initListingsPage();
+}
