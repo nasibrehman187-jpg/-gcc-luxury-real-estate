@@ -1779,6 +1779,31 @@ footer {
 .footer-bottom-links a { color: var(--sandstone); transition: color 0.3s ease; }
 .footer-bottom-links a:hover { color: var(--gold); }
 
+.footer-demo-disclaimer {
+  max-width: 1200px;
+  margin: 1.25rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(196, 164, 132, 0.08);
+  font-size: 0.65rem;
+  color: var(--sandstone-dim);
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.85rem;
+    text-align: center;
+  }
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
 /* ---------- Mobile Responsive & Richer Fallback ---------- */
 @media (max-width: 1024px) {
   #three-canvas {
