@@ -26,7 +26,7 @@ const FALLBACK_PROPERTIES = [
     badge: 'Featured',
     status: 'Ready',
     added: '2024-11-15',
-    cardImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=75',
+    cardImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=75',
   },
   {
     id: 'palm-villa-retreat',
@@ -65,7 +65,7 @@ const FALLBACK_PROPERTIES = [
     badge: 'New',
     status: 'Off-Plan',
     added: '2024-12-01',
-    cardImage: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=75',
+    cardImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=75',
   },
   {
     id: 'marina-heights-estate',

@@ -39,8 +39,8 @@ export const PROPERTIES = [
     added: '2024-11-15',
     
     // Curated high-res Unsplash photos with responsive sizing
-    heroImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-    cardImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=75',
+    heroImage: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80',
+    cardImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=75',
     
     tagline: 'Above the skyline. Beyond expectation.',
     description: [
@@ -257,7 +257,7 @@ export const PROPERTIES = [
     added: '2024-12-01',
     
     heroImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80',
-    cardImage: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=75',
+    cardImage: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=75',
     
     tagline: 'Contemporary elegance on the Doha waterfront.',
     description: [
@@ -300,8 +300,8 @@ export const PROPERTIES = [
     agent: { name: 'Khalid Al-Majid', title: 'Managing Director, Qatar & GCC Region', phone: '+92 306 2320099' },
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80',
-        thumb: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=300&q=70',
+        url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+        thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=300&q=70',
         label: 'Bay View Salon',
         alt: 'Floor-to-ceiling glass lounge overlooking Doha waterfront'
       },
@@ -408,33 +408,33 @@ export const PROPERTIES = [
     agent: { name: 'Sara Al-Neyadi', title: 'Senior Director, Abu Dhabi Estates', phone: '+92 306 2320099' },
     gallery: [
       {
-        url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
-        thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=300&q=70',
+        url: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80',
+        thumb: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=300&q=70',
         label: 'Waterfront Reception',
         alt: 'Pivoting glass doors opening to waterfront canal and marina'
       },
       {
-        url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80',
-        thumb: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=300&q=70',
+        url: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1200&q=80',
+        thumb: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=300&q=70',
         label: 'Architectural Lounge',
         alt: 'Polished concrete and teak interior with sculptural lighting'
       },
       {
-        url: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=1200&q=80',
-        thumb: 'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?auto=format&fit=crop&w=300&q=70',
-        label: 'Rooftop Oasis',
-        alt: 'Rooftop plunge pool and sunset entertaining terrace'
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1200&q=80',
-        thumb: 'https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=300&q=70',
-        label: 'Master Retreat',
+        url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
+        thumb: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=300&q=70',
+        label: 'Master Harbor Retreat',
         alt: 'Master suite with private balcony and direct marina views'
       },
       {
-        url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
-        thumb: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=300&q=70',
-        label: 'Marina Mooring',
+        url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
+        thumb: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=300&q=70',
+        label: 'Rooftop Plunge & Terrace',
+        alt: 'Rooftop plunge pool and sunset entertaining terrace'
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80',
+        thumb: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=300&q=70',
+        label: 'Private Mooring',
         alt: 'Private yacht mooring and dusk estate illumination'
       },
     ],
