@@ -15,7 +15,9 @@ import './register.js';
 function getSlugFromURL() {
   const path = window.location.pathname;
   const match = path.match(/\/property\/([a-z0-9-]+)/);
-  return match ? match[1] : null;
+  if (match && match[1]) return match[1];
+  const params = new URLSearchParams(window.location.search);
+  return params.get('id') || params.get('slug') || null;
 }
 
 // ---------- SVG Icon Library ----------

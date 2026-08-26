@@ -452,6 +452,7 @@ Before going live with any production deployment or client demonstration, verify
 - **Production Host:** [Vercel](https://vercel.com/)
 - **Repository:** GitHub (`https://github.com/nasibrehman187-jpg/-gcc-luxury-real-estate.git`)
 - **Continuous Deployment:** Any commit pushed to the `main` branch automatically triggers a production build and deployment on Vercel.
+- **Routing Configuration (`vercel.json`):** Configured with clean URLs and rewrite rules mapping `/property/:slug*` to `/property.html` and clean routes (`/listings`, `/about`, etc.) to their static HTML entry points.
 
 ### 10.2 Environment Variables Configuration
 
