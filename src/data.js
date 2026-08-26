@@ -238,6 +238,7 @@ export const PROPERTIES = [
     price: 12800000,
     priceUSD: 12800000,
     priceAED: 46976000,
+    priceQAR: 46976000,
     beds: 3,
     baths: 4,
     sqft: 4100,
@@ -480,7 +481,7 @@ export const LOCATIONS = {
     stats: [
       { label: 'Prime Rental Yield', value: '6.5% – 8.0%' },
       { label: 'Residency Eligible', value: 'Permanent Title' },
-      { label: 'Property Tax', value: '0% Tax Rate' },
+      { label: 'Tax Advisory Note', value: 'Jurisdiction Dependent' },
       { label: 'Infrastructure', value: 'Tier-1 Metro & DOH' },
     ],
   },
@@ -548,38 +549,55 @@ export function getPropertyPricing(propertyOrPrice) {
   if (typeof propertyOrPrice === 'object' && propertyOrPrice !== null) {
     const usd = propertyOrPrice.priceUSD || propertyOrPrice.price || 0;
     const aed = propertyOrPrice.priceAED || Math.round(usd * USD_TO_AED_RATE);
-    return { usd, aed };
+    const qar = propertyOrPrice.priceQAR || (propertyOrPrice.locationKey === 'doha' ? aed : null);
+    return { usd, aed, qar, isDoha: propertyOrPrice.locationKey === 'doha' || !!propertyOrPrice.priceQAR };
   }
   const usd = typeof propertyOrPrice === 'number' ? propertyOrPrice : 0;
   const aed = Math.round(usd * USD_TO_AED_RATE);
-  return { usd, aed };
+  return { usd, aed, qar: null, isDoha: false };
 }
 
 export function formatPriceAED(propertyOrPrice) {
-  const { aed } = getPropertyPricing(propertyOrPrice);
+  const { aed, qar, isDoha } = getPropertyPricing(propertyOrPrice);
+  if (isDoha && qar) {
+    return `QAR ${qar.toLocaleString()} (AED ${aed.toLocaleString()})`;
+  }
   return `AED ${aed.toLocaleString()}`;
 }
 
 export function formatPriceUSD(propertyOrPrice) {
   const { usd } = getPropertyPricing(propertyOrPrice);
-  return `≈ $${usd.toLocaleString()}`;
+  return `Approx. USD $${usd.toLocaleString()}`;
 }
 
 export function formatDualPriceHtml(propertyOrPrice, opts = {}) {
-  const { usd, aed } = getPropertyPricing(propertyOrPrice);
+  const { usd, aed, qar, isDoha } = getPropertyPricing(propertyOrPrice);
   const isCompact = opts.compact || false;
   const customClass = opts.className || '';
+
+  if (isDoha && qar) {
+    return `
+      <div class="price-dual-box ${isCompact ? 'price-dual-compact' : ''} ${customClass}">
+        <span class="price-aed-primary">QAR ${qar.toLocaleString()} <span style="font-size: 0.72rem; color: var(--sandstone); font-weight: normal;">(AED ${aed.toLocaleString()})</span></span>
+        <span class="price-usd-secondary">Approx. USD $${usd.toLocaleString()}</span>
+      </div>
+    `;
+  }
 
   return `
     <div class="price-dual-box ${isCompact ? 'price-dual-compact' : ''} ${customClass}">
       <span class="price-aed-primary">AED ${aed.toLocaleString()}</span>
-      <span class="price-usd-secondary">≈ $${usd.toLocaleString()}</span>
+      <span class="price-usd-secondary">Approx. USD $${usd.toLocaleString()}</span>
     </div>
   `;
 }
 
 export function formatPrice(price) {
-  const { aed } = getPropertyPricing(price);
+  const { aed, qar, isDoha } = getPropertyPricing(price);
+  if (isDoha && qar) {
+    const m = qar / 1_000_000;
+    return `QAR ${m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)}M`;
+  }
   if (aed >= 1_000_000) {
     const m = aed / 1_000_000;
     return `AED ${m % 1 === 0 ? m.toFixed(0) : m.toFixed(1)}M`;

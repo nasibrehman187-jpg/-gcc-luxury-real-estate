@@ -2,7 +2,7 @@
 
 > [!IMPORTANT]
 > **Portfolio Demonstration Notice:**
-> This platform is an illustrative portfolio demonstration project — not a licensed brokerage, live transactional portal, or active property marketplace. All business metrics, property listings, client testimonials, and regulatory designations (such as "RERA & DLD Licensed," "verified," "authenticated," and "fiduciary representation") throughout the site represent demonstration claims created solely to showcase ultra-prime UI/UX design, performance optimization, and full-stack integrations.
+> This is a demonstration portfolio project. Property data, prices, yields, licensing references, partner names, testimonials, and market figures are illustrative and not real offers. All business metrics, property listings, and regulatory designations (such as "RERA & DLD Licensed," "verified," "authenticated," and "fiduciary representation") throughout the site represent demonstration claims created solely to showcase ultra-prime UI/UX design, performance optimization, and full-stack integrations.
 
 ---
 
@@ -13,7 +13,7 @@
 - **Tagline:** *Where Gulf Luxury Meets Intelligent Investment*
 - **Context:** Illustrative Portfolio Metrics — Demonstration Brand — Sample Properties
 - **Primary Purpose:** A flagship ultra-luxury real estate and sovereign wealth investment portal designed as a high-tier portfolio piece for acquiring private clients, luxury brokerages, property developers, and family offices in the GCC region (UAE, Qatar, Saudi Arabia, Bahrain, Oman, Kuwait).
-- **Core Value Proposition:** Combines institutional-grade investment metrics (cap rates, indicative yields, Golden Visa qualification, 0% tax structures) with ultra-high-end residential showcases (penthouses, private islands, beachfront villas).
+- **Core Value Proposition:** Combines institutional-grade investment metrics (cap rates, indicative yields, Golden Visa qualification, tax-efficient structures) with ultra-high-end residential showcases (penthouses, private islands, beachfront villas).
 
 ### 1.2 Architecture Clarity Summary
 ```
@@ -137,7 +137,7 @@ Site Sitemap Architecture
   1. **Top Trust Strip:** Illustrative licensing note, 15+ years experience, indicative yield baseline (`6.8% – 9.2% p.a.`).
   2. **Navigation Header:** Brand logo, navigation links, Arabic language toggle (`العربية`), and *"Schedule Consultation"* CTA button.
   3. **Static Luxury Hero:** Architectural skyline photography with dark vignette, institutional slogan (*"Where Gulf Luxury Meets Intelligent Investment"*), primary *"Explore Properties"* and secondary *"Book Private Consultation"* CTAs.
-  4. **Trust Bar Metrics Strip:** RERA & DLD illustrative badges, 250+ curated assets, AED 2.4B+ portfolio volume, accompanied by an explicit illustrative figures disclaimer.
+  4. **Trust Bar Metrics Strip:** Illustrative regional portfolio badges, 250+ curated assets, AED 2.4B+ portfolio volume, accompanied by an explicit illustrative figures disclaimer.
   5. **Featured Residences Preview:** Curated 3-property preview (Skyline Penthouse, Palm Villa Retreat, Marina Heights Estate) showcasing starting prices, specs, verified badges, and a central *"View All Properties"* link to the full catalog.
   6. **Why Invest With Us (3 Core Pillars):** Prime Locations, Reviewed Asset Quality, and Discreet Advisory.
   7. **Footer & Private Register:** Institutional footer navigation, regulatory seal, and VIP newsletter signup.
@@ -265,7 +265,7 @@ Portfolio Single Source of Truth Matrix
 ├────────────────────────┼─────────────────────┼──────────────────────┼────────────────────────┼───────────┤
 │ Skyline Penthouse      │ Downtown Dubai, UAE │ AED 90.0M / $24.5M   │ 4 Beds · 5 Baths · 6.2k│ Ready     │
 │ Palm Villa Retreat     │ Palm Jumeirah, UAE  │ AED 67.895M / $18.5M │ 5 Beds · 6 Baths · 12.4│ Ready     │
-│ Corniche Residence     │ Doha Corniche, QAT  │ AED 46.976M / $12.8M │ 3 Beds · 4 Baths · 4.1k│ Off-Plan  │
+│ Corniche Residence     │ Doha Corniche, QAT  │ QAR 46.9M / $12.8M   │ 3 Beds · 4 Baths · 4.1k│ Off-Plan  │
 │ Marina Heights Estate  │ Al Raha Beach, AD   │ AED 55.784M / $15.2M │ 4 Beds · 4 Baths · 9.8k│ Ready     │
 └────────────────────────┴─────────────────────┴──────────────────────┴────────────────────────┴───────────┘
 ```
@@ -292,7 +292,7 @@ Portfolio Single Source of Truth Matrix
 
 3. **Corniche Residence (`corniche-residence`):**
    - *Location:* Doha Waterfront Corniche, Qatar
-   - *Price:* AED 46,976,000 (≈ $12,800,000 USD / QAR 46.9M)
+   - *Price:* QAR 46,976,000 / AED 46,976,000 (Approx. USD $12,800,000)
    - *Specs:* **3 Bedrooms · 4 Bathrooms · 4,100 sq ft (381 sq m)**
    - *Type:* Skyline Apartment | *Purpose:* Investment | *Badge:* New | *Status:* Off-Plan (Q4 2026)
    - *Developer:* Coastline Estates
@@ -310,7 +310,7 @@ Portfolio Single Source of Truth Matrix
 
 ### 4.3 Fictional Business & Partner Details (Demonstration Context)
 - **Brand Identity:** GCC Luxury Real Estate (Established 2009)
-- **Regulatory Registration:** RERA ORN 29481 / DLD Licensed Brokerage (Illustrative demo context)
+- **Regulatory Context:** Illustrative Demonstration Brokerage (Portfolio demonstration context)
 - **Developer Partners:** Meridian Developments, Horizon Properties, Coastline Estates, Zenith Group
 - **Client Testimonials:**
   - *Tariq Al-Hashemi* (Private Family Office, UAE)
@@ -382,7 +382,7 @@ Security audit verified:
    - Invisible honeypot inputs (`_hp_sec_timestamp`, `_hp_company_sec`, `_hp_email_sec`) with `autocomplete="new-password"` to eliminate browser autofill false-positives.
    - **Interaction Velocity Guard:** Submissions occurring $<800\text{ms}$ after form initialization are automatically filtered as automated scripts.
    - **Submission Cooldown:** 3-second throttle preventing form submission spamming.
-4. **Complete Production UI States:**
+4. **Complete Portfolio UI States:**
    - **Loading State:** Button spinners (`Submitting...`) and pulsing skeleton card placeholders.
    - **Empty State:** Sandstone Gulf empty results message with instant reset action.
    - **Error Handling:** Inline non-destructive error notices preserving user input on network dropouts.

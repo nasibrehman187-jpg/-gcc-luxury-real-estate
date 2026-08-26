@@ -77,7 +77,7 @@ function initLocationPage() {
                   <span class="property-badge badge-${badgeClass}">${property.badge || 'Featured'}</span>
                   <span class="property-status-badge status-${(property.status || 'ready').toLowerCase()}">${property.status || 'Ready'}</span>
                 </div>
-                <span class="card-verified-badge" title="Authenticated Title & Direct Developer Authorization">
+                <span class="card-verified-badge" title="Sample Curated Residence · Illustrative Verification">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                   Verified
                 </span>

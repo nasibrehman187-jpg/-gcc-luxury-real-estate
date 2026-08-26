@@ -162,7 +162,7 @@ function renderProperty(property) {
         <div class="prop-badge-row">
           <span class="prop-tag">${property.typeLabel}</span>
           <span class="prop-status-tag status-${property.status.toLowerCase()}">${property.status}</span>
-          <span class="prop-verified-badge" title="Authenticated Title & Direct Developer Authorization">
+          <span class="prop-verified-badge" title="Sample Curated Residence · Illustrative Verification">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             Verified Listing
           </span>
@@ -495,6 +495,9 @@ function renderProperty(property) {
               <span class="btn-spinner" aria-hidden="true"></span>
               <span class="btn-text" data-i18n="prop.submitBtn">Request Private Consultation</span>
             </button>
+            <p class="form-legal-consent" style="margin-top: 0.85rem; font-size: 0.65rem; color: var(--text-muted); line-height: 1.45; text-align: center;">
+              By submitting this form, you agree to our <a href="/privacy.html" style="color: var(--sandstone); text-decoration: underline;">Privacy Policy</a>. This website does not provide legal, tax, immigration, or investment advice.
+            </p>
           </form>
 
           <!-- Success State -->

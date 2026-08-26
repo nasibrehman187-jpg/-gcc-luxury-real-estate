@@ -18,12 +18,12 @@ export const TRANSLATIONS = {
     'nav.langCode': 'AR',
 
     // Trust Bar
-    'trust.license': 'RERA & DLD Licensed Brokerage · ORN 29481',
+    'trust.license': 'Illustrative Portfolio · Gulf Region',
     'trust.years': '15+ Years Excellence',
     'trust.yield': 'Indicative Yield: 6.8% – 9.2% p.a.',
 
     // Hero Section
-    'hero.eyebrow': 'Est. 2009 — Dubai · Abu Dhabi · Doha',
+    'hero.eyebrow': 'Est. 2009 (Demo Brand) — Dubai · Abu Dhabi · Doha',
     'hero.title1': 'Where Gulf Luxury',
     'hero.title2': 'Meets Intelligent Investment',
     'hero.subtext': 'Discover exceptional residences, waterfront villas, and high-yield investment opportunities across the GCC.',
@@ -34,15 +34,15 @@ export const TRANSLATIONS = {
     // Hero Metrics
     'metric.propCount': '250+ Curated Properties',
     'metric.markets': '8 GCC Markets',
-    'metric.portfolio': 'AED 2.4B+ Portfolio Value',
-    'metric.advisory': 'Verified Investment Advisory',
+    'metric.portfolio': 'AED 2.4B+ Illustrative Portfolio',
+    'metric.advisory': 'Sample Curated Residences',
 
     // Section Titles
     'section.curatedPortfolio': 'Curated Portfolio',
     'section.featuredResidences': 'Featured Residences',
     'section.investmentIntel': 'Investment Intelligence',
     'section.investmentSubtitle': 'Strategic metrics for sovereign capital, institutional portfolios, and high-net-worth acquisitions.',
-    'section.clientTestimonials': 'Client Testimonials',
+    'section.clientTestimonials': 'Sample Client Perspectives',
     'section.testimonialsSubtitle': 'Discreet representation trusted by family offices and private investors worldwide.',
     'section.whyGcc': 'Why GCC Luxury',
     'section.whereVision': 'Where Vision Meets Address.',
@@ -121,12 +121,12 @@ export const TRANSLATIONS = {
     'nav.langCode': 'EN',
 
     // Trust Bar
-    'trust.license': 'وساطة عقارية مرخصة من RERA و DLD · رخصة 29481',
+    'trust.license': 'محفظة نموذجية تجريبية · منطقة الخليج',
     'trust.years': 'أكثر من 15 عاماً من التميز',
     'trust.yield': 'عوائد تأشيرية: 6.8% – 9.2% سنوياً',
 
     // Hero Section
-    'hero.eyebrow': 'تأسست عام 2009 — دبي · أبوظبي · الدوحة',
+    'hero.eyebrow': 'علامة تجريبية (تأسست افتراضياً 2009) — دبي · أبوظبي · الدوحة',
     'hero.title1': 'حيث تلتقي الفخامة الخليجية',
     'hero.title2': 'بالاستثمار الذكي',
     'hero.subtext': 'اكتشف أرقى المساكن الفاخرة، الفلل الشاطئية، والفرص الاستثمارية عالية العائد في دول مجلس التعاون الخليجي.',
@@ -137,15 +137,15 @@ export const TRANSLATIONS = {
     // Hero Metrics
     'metric.propCount': '+250 عقاراً استثنائياً',
     'metric.markets': '8 أسواق خليجية',
-    'metric.portfolio': '+2.4 مليار درهم محفظة',
-    'metric.advisory': 'استشارات استثمارية معتمدة',
+    'metric.portfolio': '+2.4 مليار درهم (قيمة توضيحية)',
+    'metric.advisory': 'نماذج مساكن منتقاة',
 
     // Section Titles
     'section.curatedPortfolio': 'المحفظة المختارة',
     'section.featuredResidences': 'المساكن المميزة',
     'section.investmentIntel': 'ذكاء الاستثمار العقاري',
     'section.investmentSubtitle': 'مؤشرات استراتيجية لرؤوس الأموال السيادية والمحافظ العائلية والمستثمرين الدوليين.',
-    'section.clientTestimonials': 'آراء كبار العملاء',
+    'section.clientTestimonials': 'نماذج من آراء العملاء',
     'section.testimonialsSubtitle': 'تمثيل عقاري يتسم بأعلى درجات السرية والاحترافية الموثوقة عالمياً.',
     'section.whyGcc': 'لماذا تختارنا',
     'section.whereVision': 'حيث تلتقي الرؤية بأرقى العناوين.',

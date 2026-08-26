@@ -39,6 +39,16 @@ export function initPrivateRegister() {
       form.appendChild(errorEl);
     }
 
+    // Ensure legal consent text exists below form
+    let consentEl = form.querySelector('.form-legal-consent');
+    if (!consentEl) {
+      consentEl = document.createElement('p');
+      consentEl.className = 'form-legal-consent';
+      consentEl.style.cssText = 'margin-top: 0.6rem; font-size: 0.62rem; color: var(--text-muted); line-height: 1.4;';
+      consentEl.innerHTML = 'By submitting this form, you agree to our <a href="/privacy.html" style="color: var(--sandstone); text-decoration: underline;">Privacy Policy</a>. This website does not provide legal, tax, immigration, or investment advice.';
+      form.appendChild(consentEl);
+    }
+
     const formInitTime = Date.now();
     let lastSubmissionTime = 0;
 
